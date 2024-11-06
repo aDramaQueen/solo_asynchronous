@@ -17,11 +17,9 @@ def management_is_in_process() -> bool:
     Determines if certain manage.py processes are running within this execution:
         - makemigrations
         - migrate
-        - delete_old_migrations
         - startapp
         - collectstatic
         - --help
-        - backup_migrations
 
     These processes do not run well, with Django internal changes at the same time.
 
