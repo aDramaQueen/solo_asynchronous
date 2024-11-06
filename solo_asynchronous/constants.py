@@ -27,8 +27,6 @@ def management_is_in_process() -> bool:
 
     :return: `True` if this process is running any predefined "vulnerable" management process, `False` otherwise
 
-    @see `Django documentation - django-admin and manage.py <https://docs.djangoproject.com/en/4.2/ref/django-admin/#django-admin-and-manage-py>`__
-
-    @see `Django documentation - Migrations <https://docs.djangoproject.com/en/4.2/topics/migrations/#module-django.db.migrations>`__
+    @see https://docs.djangoproject.com/en/5.1/ref/django-admin/#django-admin-and-manage-py
     """
-    return any(arg in ('makemigrations', 'migrate', 'delete_old_migrations', 'startapp', 'collectstatic', '--help', 'backup_migrations') for arg in sys.argv)
+    return any(arg in ('makemigrations', 'migrate', 'startapp', 'collectstatic', '--help') for arg in sys.argv)
